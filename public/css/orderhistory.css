@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#order-history {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.order h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.order p {
+  margin: 5px 0;
+}

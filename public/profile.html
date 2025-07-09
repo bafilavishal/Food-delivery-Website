@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile | Foodie Express</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('bck.jpeg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      background-color: rgba(90, 84, 84, 0.85);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 650px;
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff6f61;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .info p {
+      font-size: 1.1em;
+      margin: 8px 0;
+    }
+
+    .profile-options {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .profile-options a {
+      background-color: #ff6f61;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-options a:hover {
+      background-color: #ff3b2e;
+    }
+
+    .logout-btn {
+      margin-top: 30px;
+      display: block;
+      background-color: #333;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      border: none;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Profile</h1>
+  </header>
+
+  <div class="container">
+    <div class="info">
+      <h2 id="user-name">Loading...</h2>
+      <p id="user-email">Email: Loading...</p>
+      <p>Phone: +91 98765 43210</p>
+    </div>
+
+    <div class="profile-options">
+      <a href="edit_profile.html">✏️ Edit Profile</a>
+      <a href="orders.html">🧾 My Orders</a>
+      <a href="rewards.html">⭐ Rewards</a>
+      <a href="settings.html">⚙️ Settings</a>
+      <a href="support.html">📞 Support</a>
+      <a href="main_page.html">🏠 Home</a>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+  </div>
+
+  <script>
+    // Load user data from localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const name = localStorage.getItem("loggedInUser");
+      const email = localStorage.getItem("email");
+
+      if (name) {
+        document.getElementById("user-name").textContent = name;
+      }
+
+      if (email) {
+        document.getElementById("user-email").textContent = `Email: ${email}`;
+      }
+    });
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "signup.html";
+    }
+  </script>
+</body>
+</html>

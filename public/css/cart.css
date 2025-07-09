@@ -1,0 +1,212 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and page layout */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw; /* Full width of the viewport */
+  transition: background-color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Navbar */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  padding: 16px 32px;
+  color: #fff;
+  width: 100vw; /* Full width of the viewport */
+  height: 80px;
+  box-sizing: border-box; /* Ensure padding doesn't affect the layout */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Left side: logo and title */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-left img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.menu-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(255, 242, 0);
+  transition: font-size 0.3s ease;
+}
+
+
+/* Menu Section */
+#cart-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 100vw; /* Take full viewport width */
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 20px; /* Add spacing below */
+}
+
+#cart-items, #cart-total {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 109%;
+  min-height: 50px;
+  box-sizing: border-box;
+  border: 2px solid black;
+}
+
+.order-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.order-item div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.order-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.order-item h3:hover {
+  color: #007bff;
+}
+
+.order-item p {
+  font-size: 16px;
+  color: #fa0101;
+  margin-bottom: 10px;
+}
+
+.order-item .quantity {
+  font-size: 16px;
+  color: #15ff00;
+  margin-bottom: 10px;
+}
+
+/* Cart Total Section */
+/* Cart Total Section */
+#cart-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100vw; /* Take full viewport width */
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+#cart-total h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Checkout Buttons Container */
+.checkout-buttons {
+  display: flex;
+  justify-content: space-between; /* Ensure buttons are spaced apart */
+  gap: 20px; /* Adjust gap to create more space between buttons */
+  width: 60%; /* Adjust width for better spacing */
+  margin-top: 20px; /* Add some space above the buttons */
+}
+
+/* Buttons */
+#checkout-btn,
+#clear-btn {
+  min-width: 180px;
+  padding: 14px 30px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#checkout-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+#checkout-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+#clear-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+#clear-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .checkout-buttons {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    width: 100%;
+    gap: 15px;
+  }
+}
+

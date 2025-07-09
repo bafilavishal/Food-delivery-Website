@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Order delicious meals online from top restaurants near you. FastBite brings food delivery to your doorstep quickly and conveniently."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>food</title>
+    <link rel="stylesheet" href="css/main_page.css" />
+  </head>
+  <body>
+    <!--  nav bar  -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FOODIE EXPRESS</h1>
+      </div>
+
+      <div class="navbar-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="health&diet.html">Health & Diet</a></li>
+          <li><a href="seasonal.html">Seasonal</a></li>
+          <li><a href="support.html">Contact Us</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Right-side actions -->
+      <div class="nav-actions">
+        <a href="signup.html" id="signupBtn" class="signup-btn">Sign Up</a>
+
+        <!-- Profile dropdown -->
+        <div id="profileMenu" style="position: relative; display: inline-block">
+          <img
+            src="img/profiles.png"
+            alt="Profile"
+            id="profileIcon"
+            style="
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              cursor: pointer;
+            "
+          />
+
+          <div
+            id="dropdownMenu"
+            style="
+              display: none;
+              position: absolute;
+              top: 50px;
+              right: 0;
+              background: white;
+              border: 1px solid #ccc;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              padding: 10px;
+              z-index: 100;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <img
+                src="img/profiles.png"
+                alt="User"
+                style="width: 40px; height: 40px; border-radius: 50%"
+              />
+              <div>
+                <p id="userName" style="margin: 0">User</p>
+                <span style="font-size: 12px">Active now 🟢</span>
+              </div>
+            </div>
+            <hr />
+            <ul style="list-style: none; padding: 0; margin: 10px 0 0 0">
+             <ul>
+  <li><a href="profile.html">👤 Profile</a></li>
+  <li><a href="orderhistory.html">🧾 My Orders</a></li>
+  <li><a href="settings.html">⚙️ Settings</a></li>
+  <li><a href="rewards.html">⭐ Rewards</a></li>
+  <li><a href="support.html">📞 Support</a></li>
+  <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- =========== Scrolling Notification =========== -->
+<div class="scrolling-notification">
+  <div class="scrolling-text">
+    🍔 <strong>Foodie Express:</strong> Taste our best-sellers – Spicy Chicken Wings, Paneer Butter Masala, and Veggie Delight Pizza! | 
+    🚀 Fast delivery in under 30 minutes | 🛍 Order combos & get 10% off | 
+    📞 Call us: 9876543210 | 📧 Email: support@foodieexpress.com
+  </div>
+</div>
+
+
+
+    <!--  hero section  -->
+    <div class="home">
+      <div class="main-sec">
+        <div class="left">
+          <h1 class="headline">
+            Get Your Favorite
+            <span style="color: #0043ff">Cuisine Delivered</span><br />
+            Right to Your Doorstep
+          </h1>
+          <p class="subtext">
+            Craving something delicious? We've got you covered!<br />
+            Fast and reliable food delivery from top restaurants near you.
+          </p>
+          <button id="orderBtn" class="cta-button">Order Now</button>
+        </div>
+        <div class="right">
+          <img
+            src="img/first_img.png"
+            alt="Food delivery illustration"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--  top categories  -->
+    <section class="categories">
+      <h2>Explore Delicious Categories</h2>
+      <div class="category-wrapper">
+        <div class="category-track" id="categoryTrack">
+          <div class="category-card">
+            <img src="img/indian food.jpg" />
+            <p>Indian</p>
+          </div>
+          <div class="category-card">
+            <img src="img/chinnese food.jpg" />
+            <p>Chinese</p>
+          </div>
+          <div class="category-card">
+            <img src="img/south indian.webp" />
+            <p>South Indian</p>
+          </div>
+          <div class="category-card">
+            <img src="img/desserts.jpg" />
+            <p>Desserts</p>
+          </div>
+          <div class="category-card">
+            <img src="img/beverages.jpg" />
+            <p>Beverages</p>
+          </div>
+          <div class="category-card">
+            <img src="img/indian food.jpg" />
+            <p>Italian Food</p>
+          </div>
+          <div class="category-card">
+            <img src="img/korean food.png" />
+            <p>korean Food</p>
+          </div>
+          <div class="category-card">
+            <img src="img/japaneese food.webp" />
+            <p>Japanese Food</p>
+          </div>
+          <div class="category-card">
+            <img src="img/mexican food.jpeg" />
+            <p>Mexican Food</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  restaurant pags  -->
+    <section class="restaurant-sec">
+      <h1 class="simple-heading">Explore Our Top Restaurants</h1>
+
+      <!-- CARD CONTAINER -->
+      <div class="card-container">
+        <!-- Restaurant Card 1 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel1.png" alt="Spicy Kitchen" />
+            <div class="badge">Top Rated</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Spicy Kitchen</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.9</span>
+              <span class="delivery-time">30–40 min</span>
+            </div>
+            <p class="cuisine-type">Indian, Fast Food</p>
+            <p class="starting-price">Starting from <strong>₹120</strong></p>
+            <a href="order.html" class="order-btn">Menu</a>
+          </div>
+        </div>
+
+        <!-- Restaurant Card 2 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel2.png" alt="Urban Bites" />
+            <div class="badge">Customer Favorite</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Urban Bites</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.6</span>
+              <span class="delivery-time">20–30 min</span>
+            </div>
+            <p class="cuisine-type">Mexican, Burgers</p>
+            <p class="starting-price">Starting from <strong>₹190</strong></p>
+            <a href="order.html" class="order-btn">Menu</a>
+          </div>
+        </div>
+
+        <!-- Restaurant Card 3 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel3.png" alt="Urban Bites" />
+            <div class="badge">Top Choice</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Crazy taste</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.6</span>
+              <span class="delivery-time">30–50 min</span>
+            </div>
+            <p class="cuisine-type">Chinese, Momos</p>
+            <p class="starting-price">Starting from <strong>₹90</strong></p>
+            <a href="order.html" class="order-btn">Menu</a>
+          </div>
+        </div>
+
+        <!-- Restaurant Card 4 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel4.avif" alt="Urban Bites" />
+            <div class="badge">Bestseller Restaurant</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Spartans Cafe</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.5</span>
+              <span class="delivery-time">20–30 min</span>
+            </div>
+            <p class="cuisine-type">Italian, Indian</p>
+            <p class="starting-price">Starting from <strong>₹120</strong></p>
+            <a href="order.html" class="order-btn">Menu</a>
+          </div>
+        </div>
+
+        <!-- Restaurant Card 5 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel 6.avif" alt="Urban Bites" />
+            <div class="badge">Best Deals</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>The NoMad Hotel</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.4</span>
+              <span class="delivery-time">30–50 min</span>
+            </div>
+            <p class="cuisine-type">Korean, Italian</p>
+            <p class="starting-price">Starting from <strong>₹250</strong></p>
+            <a href="order.html" class="order-btn">Menu</a>
+          </div>
+        </div>
+
+        <!-- Restaurant Card 6 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel6.png" alt="Urban Bites" />
+            <div class="badge">Chef’s Choice</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Half Moon Cafes</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.6</span>
+              <span class="delivery-time">30–40 min</span>
+            </div>
+            <p class="cuisine-type">Japanese, Mexican</p>
+            <p class="starting-price">Starting from <strong>₹160</strong></p>
+            <a href="order.html" class="order-btn"> Menu</a>
+          </div>
+        </div>
+
+        <!-- Restaurant Card 7 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel7.jpg" alt="Urban Bites" />
+            <div class="badge">Fast Delivery</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Pots & Stones</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.3</span>
+              <span class="delivery-time">10–20 min</span>
+            </div>
+            <p class="cuisine-type">South-Indian</p>
+            <p class="starting-price">Starting from <strong>₹220</strong></p>
+            <a href="order.html" class="order-btn"> Menu</a>
+          </div>
+        </div>
+        <!-- Restaurant Card 8 -->
+        <div class="restaurant-card">
+          <a href="order.html" class="restaurant-image-link">
+            <img src="img/hotel8.jpg" alt="Urban Bites" />
+            <div class="badge">New Arrival</div>
+          </a>
+          <div class="restaurant-info">
+            <h3>Cafe De Piccolo</h3>
+            <div class="restaurant-meta">
+              <span class="rating">⭐ 4.6</span>
+              <span class="delivery-time">20–30 min</span>
+            </div>
+            <p class="cuisine-type">Beverages, desserts</p>
+            <p class="starting-price">Starting from <strong>₹180</strong></p>
+            <a href="order.html" class="order-btn">Menu</a>
+          </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+
+    <!-- new section   -->
+    <!-- Popular Dishes Near You -->
+    <section class="popular-carousel">
+      <div class="carousel-header">
+        <h2>Popular Dishes Near You</h2>
+        <p>People are loving these meals — get yours now!</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterCarousel('all')">
+          All
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('veg')">
+          Vegetarian
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('non')">
+          Non-Veg
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('spicy')">
+          Spicy
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('drink')">
+          Drinks
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('a')">
+          Under ₹99
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('b')">
+          Under ₹199
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('c')">
+          Under ₹299
+        </button>
+        <button class="filter-btn" onclick="filterCarousel('d')">
+          Under ₹399
+        </button>
+      </div>
+
+      <!-- Carousel -->
+      <div class="carousel-container">
+        <!-- Left Button -->
+        <button class="carousel-btn left" onclick="slideCarousel(-1)">
+          <svg viewBox="0 0 24 24" class="arrow-icon">
+            <path
+              d="M15 6l-6 6 6 6"
+              stroke="#e53e3e"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Cleaned Dish Cards -->
+          <div class="carousel-item" data-tag="veg a">
+            <img src="img/frsh salad.jpg" alt="Fresh Garden Salad" />
+            <div class="item-info">
+              <h3>Fresh Garden Salad</h3>
+              <p>Green Bowl · <strong>₹40</strong></p>
+              <span class="rating" title="Rated 4.0 by 200+ users"
+                >★★★★☆ (4.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="spicy non c">
+            <img src="img/spicy chicken.jpeg" alt="Spicy Chicken Wings" />
+            <div class="item-info">
+              <h3>Spicy Chicken Wings</h3>
+              <p>Hot Grill · <strong>₹260</strong></p>
+              <span class="rating" title="Rated 4.9 by 500+ users"
+                >★★★★★ (5.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg b">
+            <img src="img/ppsta.avif" alt="Creamy Veg Pasta" />
+            <div class="item-info">
+              <h3>Creamy Veg Pasta</h3>
+              <p>Pasta Point · <strong>₹160</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="non b">
+            <img src="img/butter chicken 2.jpg" alt="Butter Chicken" />
+            <div class="item-info">
+              <h3>Butter Chicken</h3>
+              <p>N-Veg Grills · <strong>₹160</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.2)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="non spicy b">
+            <img src="img/biryani1.jpg" alt="Biryani" />
+            <div class="item-info">
+              <h3>Spicy Biryani</h3>
+              <p>Biryani Lover · <strong>₹100</strong></p>
+              <span class="rating" title="Rated 4.7 by 350+ users"
+                >★★★★★ (5.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg a">
+            <img src="img/chaat1.jpg" alt="Chaat" />
+            <div class="item-info">
+              <h3>Chaat</h3>
+              <p>Chaat · <strong>₹50</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="drink a">
+            <img src="img/chai1.jpg" alt="Masala Chai" />
+            <div class="item-info">
+              <h3>Masala Chai</h3>
+              <p>Special Chai · <strong>₹40</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.2)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg spicy b">
+            <img src="img/chilly noodles.jpg" alt="Chilly Noodles" />
+            <div class="item-info">
+              <h3>Chilly Noodles</h3>
+              <p>Noodle Point · <strong>₹110</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.1)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg a">
+            <img src="img/chola bathora2.jpg" alt="Chola Bhatora" />
+            <div class="item-info">
+              <h3>Chola Bhatora</h3>
+              <p>Masala Cholaa · <strong>₹50</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.2)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg b">
+            <img src="img/Dal-Makhani2.jpg" alt="Daal Makhani" />
+            <div class="item-info">
+              <h3>Daal Makhani</h3>
+              <p>Veg Daal · <strong>₹120</strong></p>
+              <span class="rating" title="Rated 4.8 by 350+ users"
+                >★★★★★ (5.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg b">
+            <img src="img/dosha 1.webp" alt="Veg Dosha" />
+            <div class="item-info">
+              <h3>Veg Dosha</h3>
+              <p>Dosha · <strong>₹100</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.3)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="drink a">
+            <img src="img/lassi.webp" alt="Lassi" />
+            <div class="item-info">
+              <h3>Sweet Lassi</h3>
+              <p>Sweet Drink · <strong>₹60</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg b">
+            <img src="img/malai kofta.jpg" alt="Malai Kofta" />
+            <div class="item-info">
+              <h3>Malai Kofta</h3>
+              <p>Sweets · <strong>₹120</strong></p>
+              <span class="rating" title="Rated 4.8 by 350+ users"
+                >★★★★★ (5.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="drink a">
+            <img src="img/nimbu pani.jpg" alt="Nimbu Paani" />
+            <div class="item-info">
+              <h3>Nimbu Paani</h3>
+              <p>Drinks · <strong>₹40</strong></p>
+              <span class="rating" title="Rated 4.2 by 350+ users"
+                >★★★★☆ (4.2)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg c">
+            <img src="img/plak panner2.avif" alt="Palak Paneer" />
+            <div class="item-info">
+              <h3>Palak Paneer</h3>
+              <p>Veg Point · <strong>₹220</strong></p>
+              <span class="rating" title="Rated 4.3 by 350+ users"
+                >★★★★☆ (4.3)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg a">
+            <img src="img/vada paav 1.webp" alt="Vada Paav" />
+            <div class="item-info">
+              <h3>Vada Paav</h3>
+              <p>Street Food · <strong>₹60</strong></p>
+              <span class="rating" title="Rated 4.3 by 350+ users"
+                >★★★★☆ (4.3)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-tag="veg a">
+            <img src="img/pani puri1.jpg" alt="Pani Puri" />
+            <div class="item-info">
+              <h3>Pani Puri</h3>
+              <p>Street Food · <strong>₹30</strong></p>
+              <span class="rating" title="Rated 4.9 by 350+ users"
+                >★★★★★ (5.0)</span
+              >
+              <button class="order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <!-- Right Button -->
+        <button class="carousel-btn right" onclick="slideCarousel(1)">
+          <svg viewBox="0 0 24 24" class="arrow-icon">
+            <path
+              d="M9 18l6-6-6-6"
+              stroke="#e53e3e"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!--  riview c / feedback code  -->
+    <!-- Carousel 1 -->
+    <section class="modern-reviews">
+      <h2>What Our Customers Say</h2>
+
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack1">
+          <!-- Review Cards -->
+          <div class="review">
+            <img src="img/vinod.jpg" alt="vinod " />
+            <h3>Vinod Bhatt</h3>
+            <p>
+              “The pasta was creamy and delicious! Delivery was super fast too.”
+            </p>
+            <div class="stars">★★★★★</div>
+          </div>
+          <div class="review">
+            <img src="img/kandpal.jpg" alt="kandpal ji" />
+            <h3>Tushar Kandpal</h3>
+            <p>
+              “Best chicken wings I’ve had in a long time. Totally worth it!”
+            </p>
+            <div class="stars">★★★★★</div>
+          </div>
+          <div class="review">
+            <img src="img/tj.jpg" alt="tushar joshi " />
+            <h3>Tushar joshi</h3>
+            <p>“Fresh salad and vibrant flavors. A great healthy option!”</p>
+            <div class="stars">★★★★☆</div>
+          </div>
+          <div class="review">
+            <img src="img/yogesh.jpg" alt="yogesh palariya" />
+            <h3>Yogesh palariya</h3>
+            <p>“Amazing service and delicious food. Will order again!”</p>
+            <div class="stars">★★★★★</div>
+          </div>
+          <div class="review">
+            <img src="https://i.pravatar.cc/100?img=14" alt="Pooja Joshi" />
+             <h3>Vikram Rao</h3>
+            <p>“The desserts were heavenly and arrived fresh.”</p>
+            <div class="stars">★★★★★</div>
+          </div>
+          <div class="review">
+            <img src="https://i.pravatar.cc/100?img=28" alt="Vikram Rao" />
+             <h3>Pooja Joshi</h3>
+            <p>“Great flavors and timely delivery. Highly recommended!”</p>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button onclick="scrollReviews('carouselTrack1', -1)">❮</button>
+          <button onclick="scrollReviews('carouselTrack1', 1)">❯</button>
+        </div>
+      </div>
+    </section>
+
+    <!--  footer  -->
+    <section>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <h2>
+              <span class="emoji">🍴</span>
+              <span>Food<span class="highlight">Express</span></span>
+            </h2>
+            <p>Delivering happiness, one bite at a time.</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Order Tracking</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> support@foodexpress.com</p>
+    <p><i class="fas fa-phone"></i> +91 954831xxxx</p>
+          </div>
+
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <p class="footer-bottom">© 2025 FoodExpress. All rights reserved.</p>
+      </footer>
+    </section>
+
+    <!-- java script code for order now button  -->
+    <script>
+      document
+        .getElementById("orderBtn")
+        .addEventListener("click", function () {
+          window.location.href = "order.html";
+        });
+    </script>
+
+    <!--  chat bot code  -->
+    <a href="javascript:void(0);" onclick="openChatbot()">
+      <img src="img/chatboto.png" alt="Chat Icon" class="chat-icon" />
+    </a>
+
+    <div id="chatbot-modal" class="chatbot-modal">
+      <div class="chatbot-header">
+        <h3>Chat with Us</h3>
+      </div>
+      <div class="chatbot-body" id="chatbot-body">
+        <p>Hi! I'm here to help! Please select one of the options below:</p>
+        <button
+          class="option-button"
+          onclick="handleOption('How to Order Food')"
+        >
+          How to Order Food
+        </button>
+        <button class="option-button" onclick="handleOption('Payment Options')">
+          Payment Options
+        </button>
+        <button class="option-button" onclick="handleOption('Delivery Time')">
+          Delivery Time
+        </button>
+        <button
+          class="option-button"
+          onclick="handleOption('Available Cuisines')"
+        >
+          Available Cuisines
+        </button>
+        <button class="option-button" onclick="handleOption('Track My Order')">
+          Track My Order
+        </button>
+        <button
+          class="option-button"
+          onclick="handleOption('Promotions and Discounts')"
+        >
+          Promotions and Discounts
+        </button>
+        <button
+          class="option-button"
+          onclick="handleOption('Cancel or Change Order')"
+        >
+          Cancel or Change Order
+        </button>
+        <button class="option-button" onclick="handleOption('Contact Support')">
+          Contact Support
+        </button>
+        <button class="option-button" onclick="handleOption('FAQs')">
+          FAQs
+        </button>
+      </div>
+
+      <div class="chatbot-footer">
+        <input type="text" id="chat-input" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      // Function to open and close the chatbot
+      function openChatbot() {
+        const chatbotModal = document.getElementById("chatbot-modal");
+        chatbotModal.style.display =
+          chatbotModal.style.display === "block" ? "none" : "block";
+      }
+
+      const messagesContainer = document.getElementById("chatbot-body");
+
+      // Handle user options from the buttons
+      function handleOption(option) {
+        appendMessage(option, "user");
+        let botResponse = "";
+        switch (option) {
+          case "How to Order Food":
+            botResponse =
+              "To order food, browse the menu, add items to your cart, and proceed to checkout.";
+            break;
+          case "Payment Options":
+            botResponse =
+              "We accept credit/debit cards, UPI, net banking, and cash on delivery.";
+            break;
+          case "Delivery Time":
+            botResponse =
+              "Estimated delivery times vary based on location and restaurant, typically between 30-60 minutes.";
+            break;
+          case "Available Cuisines":
+            botResponse =
+              "We offer a variety of cuisines including Indian, Chinese, Italian, and more.";
+            break;
+          case "Track My Order":
+            botResponse =
+              'You can track your order from the "My Orders" section in the app or website.';
+            break;
+          case "Promotions and Discounts":
+            botResponse =
+              "Check the promotions section for available discounts or use promo codes at checkout.";
+            break;
+          case "Cancel or Change Order":
+            botResponse =
+              "You can cancel or change your order before it is confirmed by the restaurant.";
+            break;
+          case "Contact Support":
+            botResponse =
+              "You can contact support via email at support@fooddelivery.com or call us at +91 9876543210.";
+            break;
+          case "FAQs":
+            botResponse =
+              "Visit our FAQs page for common questions about ordering, payment, and delivery.";
+            break;
+          default:
+            botResponse = "I'm sorry, I didn't understand that option.";
+        }
+        appendMessage(botResponse, "bot");
+      }
+
+      // Append messages to the chat window
+      function appendMessage(text, sender) {
+        const messageElement = document.createElement("p");
+        messageElement.classList.add(sender);
+        messageElement.textContent = text;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      // Send message from the input box
+      function sendMessage() {
+        const inputElement = document.getElementById("chat-input");
+        const userInput = inputElement.value;
+        if (userInput.trim()) {
+          appendMessage(userInput, "user");
+          inputElement.value = "";
+          handleOption(userInput); // Optionally handle user input as an option.
+        }
+      }
+    </script>
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector(".nav .item");
+        menu.classList.toggle("active");
+      }
+    </script>
+
+    <script>
+      // Function to open modal
+      function openModal() {
+        document.getElementById("bookingModal").style.display = "block";
+      }
+
+      // Function to close modal
+      function closeModal() {
+        document.getElementById("bookingModal").style.display = "none";
+      }
+
+      // Close modal if the user clicks outside the modal
+      window.onclick = function (event) {
+        const modal = document.getElementById("bookingModal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <!--  js for explore food delicious  -->
+    <script>
+      const track = document.getElementById("categoryTrack");
+      const clone = track.innerHTML;
+      track.innerHTML += clone; // duplicate content to enable smooth loop
+    </script>
+
+    <!--  js for nav bar sign up  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = localStorage.getItem("loggedInUser");
+        const signupBtn = document.getElementById("signupBtn");
+        const profileMenu = document.getElementById("profileMenu");
+        const userNameDisplay = document.getElementById("userName");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        const profileIcon = document.getElementById("profileIcon");
+
+        // 🔐 Login status handling
+        if (user) {
+          signupBtn.style.display = "none";
+          profileMenu.style.display = "inline-block";
+          userNameDisplay.textContent = user;
+        } else {
+          signupBtn.style.display = "inline-block";
+          profileMenu.style.display = "none";
+        }
+
+        // 👆 Toggle dropdown menu
+        profileIcon?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // 🧹 Close dropdown on outside click
+        window.addEventListener("click", (e) => {
+          if (!profileMenu.contains(e.target)) {
+            dropdownMenu.style.display = "none";
+          }
+        });
+
+        // ⌨️ Close on Escape key
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            dropdownMenu.style.display = "none";
+          }
+        });
+
+        // 🚪 Logout handler
+        logoutBtn?.addEventListener("click", (e) => {
+          e.preventDefault();
+          localStorage.clear();
+          window.location.reload();
+        });
+      });
+    </script>
+    <!--  js for popular dishes  -->
+    <script>
+      let currentIndex = 0;
+
+      function slideCarousel(direction) {
+        const track = document.getElementById("carouselTrack");
+        const visibleItems = document.querySelectorAll(
+          ".carousel-item:not([style*='display: none'])"
+        );
+        const itemWidth = visibleItems[0].offsetWidth + 20;
+
+        const maxIndex = visibleItems.length - 1;
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+        const offset = -(itemWidth * currentIndex);
+        track.style.transform = `translateX(${offset}px)`;
+      }
+
+      function filterCarousel(tag) {
+        const items = document.querySelectorAll(".carousel-item");
+        const buttons = document.querySelectorAll(".filter-btn");
+        currentIndex = 0; // reset carousel position
+
+        items.forEach((item) => {
+          const tags = item.getAttribute("data-tag");
+          if (tag === "all" || tags.includes(tag)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Reset carousel slide
+        document.getElementById("carouselTrack").style.transform =
+          "translateX(0px)";
+      }
+    </script>
+
+    <!--  js for review / feedback  -->
+    <script>
+      const reviewIndices = {
+        carouselTrack1: 0,
+      };
+
+      function scrollReviews(trackId, direction) {
+        const track = document.getElementById(trackId);
+        if (!track) return;
+
+        const cards = track.querySelectorAll(".review");
+        if (cards.length === 0) return;
+
+        const cardWidth = cards[0].offsetWidth + 24;
+        const visibleCards = Math.floor(
+          track.parentElement.offsetWidth / cardWidth
+        );
+        const maxIndex = cards.length - visibleCards;
+
+        reviewIndices[trackId] = (reviewIndices[trackId] || 0) + direction;
+
+        if (reviewIndices[trackId] < 0) reviewIndices[trackId] = 0;
+        if (reviewIndices[trackId] > maxIndex)
+          reviewIndices[trackId] = maxIndex;
+
+        const translateX = reviewIndices[trackId] * cardWidth;
+        track.style.transform = `translateX(-${translateX}px)`;
+      }
+
+      window.addEventListener("resize", () => {
+        // Reset transform to keep layout clean on resize
+        for (const id in reviewIndices) {
+          reviewIndices[id] = 0;
+          const track = document.getElementById(id);
+          if (track) {
+            track.style.transform = "translateX(0px)";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

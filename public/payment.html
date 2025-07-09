@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkout - Food Delivery</title>
+<link rel="stylesheet" href="css/payment.css" />
+</head>
+<body>
+
+  <div class="payment-container">
+    <h1>Checkout</h1>
+
+    <!-- Payment Options -->
+    <div class="payment-methods">
+      <h2>Select Payment Method</h2>
+      <label><input type="radio" name="payment" value="card" checked> 💳 Credit/Debit Card</label>
+      <label><input type="radio" name="payment" value="upi"> 📱 UPI (Google Pay, PhonePe, Paytm)</label>
+      <label><input type="radio" name="payment" value="netbanking"> 🏦 Net Banking</label>
+      <label><input type="radio" name="payment" value="wallet"> 💰 Paytm Wallet</label>
+      <label><input type="radio" name="payment" value="cod"> 🏠 Cash on Delivery</label>
+    </div>
+
+    <!-- Payment Input Fields -->
+    <div class="payment-details">
+      <h2>Enter Payment Details</h2>
+      <div id="fields-container"></div>
+      <div id="error-msg" class="error-msg" style="color: red;"></div>
+    </div>
+
+    <!-- Payment Buttons -->
+    <button id="pay-now-btn">💳 Pay Now</button>
+    <button id="pay-btn" disabled>Proceed to Order Status</button>
+  </div>
+
+  <!-- JS -->
+  <script src="js/payment.js"></script>
+  <script>
+    // Handle Proceed button click
+    document.getElementById('pay-btn').addEventListener('click', function() {
+      window.location.href = 'order_status.html';  // <-- Your next page
+    });
+  </script>
+</body>
+</html>

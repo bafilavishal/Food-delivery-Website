@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-content">
+        <div class="navbar-left">
+          <img src="img/chef.jpg" alt="Chef Hat" width="32" height="32" />
+          <span class="menu-title">Menu</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Cart Content -->
+    <div id="cart-items">
+      <!-- Cart items will be inserted dynamically -->
+    </div>
+
+    <!-- Cart Total and Buttons -->
+    <div id="cart-total">
+      <h3>Total: ₹0</h3>
+      <div class="checkout-buttons"> <!-- Modified class name -->
+        <button id="clear-btn">Clear Items</button>
+        <button id="checkout-btn">Proceed to Payment</button>
+      </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+  </body>
+</html>

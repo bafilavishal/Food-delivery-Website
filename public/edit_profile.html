@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #555;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"] {
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="file"]:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+    .profile-pic-preview {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 2px solid #4a90e2;
+    }
+    button {
+      background-color: #4a90e2;
+      color: white;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #357abd;
+    }
+    .message {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #d9534f; /* Red for errors */
+    }
+    .message.success {
+      color: #28a745; /* Green for success */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Edit Profile</h2>
+    <div id="message" class="message"></div>
+    <form id="editProfileForm">
+      <img
+        src="https://via.placeholder.com/100"
+        alt="Profile Picture"
+        class="profile-pic-preview"
+        id="profilePicPreview"
+      />
+      <label for="profilePic">Change Profile Picture</label>
+      <input type="file" id="profilePic" accept="image/*" />
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="password">New Password</label>
+      <input type="password" id="password" name="password" placeholder="Leave blank to keep current" />
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+  <script>
+    const messageEl = document.getElementById('message');
+    const profilePicInput = document.getElementById('profilePic');
+    const profilePicPreview = document.getElementById('profilePicPreview');
+
+    // Load user data from localStorage on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const fullName = localStorage.getItem('loggedInUser');
+      const email = localStorage.getItem('email');
+      const profilePicUrl = localStorage.getItem('profilePicUrl');
+
+      if (!localStorage.getItem('isLoggedIn')) {
+        // Redirect if not logged in
+        window.location.href = 'login.html';
+        return;
+      }
+
+      if (fullName) document.getElementById('fullName').value = fullName;
+      if (email) document.getElementById('email').value = email;
+      if (profilePicUrl) profilePicPreview.src = profilePicUrl;
+    });
+
+    // Preview profile pic when user selects new image
+    profilePicInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        profilePicPreview.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Submit handler for profile update form
+    document.getElementById('editProfileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      messageEl.textContent = '';
+      messageEl.classList.remove('success');
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const userId = localStorage.getItem('userId');
+
+      if (!fullName || !email) {
+        messageEl.textContent = 'Name and Email are required.';
+        return;
+      }
+
+      if (!userId) {
+        messageEl.textContent = 'User not logged in.';
+        return;
+      }
+
+      // Prepare minimal update data without profilePic and password (test only)
+      const updateData = { fullName, email };
+
+      // Uncomment below to add password if provided
+      if (password) {
+        updateData.password = password;
+      }
+
+      // Handle profile pic conversion to base64 if file selected
+      if (profilePicInput.files.length > 0) {
+        try {
+          const base64 = await toBase64(profilePicInput.files[0]);
+          updateData.profilePic = base64;
+        } catch {
+          messageEl.textContent = 'Failed to process profile picture.';
+          return;
+        }
+      }
+
+      try {
+        const response = await fetch(`http://localhost:5000/api/users/${userId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updateData),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          messageEl.textContent = data.message || 'Failed to update profile.';
+          return;
+        }
+
+        // Success: update localStorage
+        localStorage.setItem('loggedInUser', fullName);
+        localStorage.setItem('email', email);
+
+        // Save returned profilePicUrl or fallback to base64 image
+        if (data.profilePicUrl) {
+          localStorage.setItem('profilePicUrl', data.profilePicUrl);
+        } else if (updateData.profilePic) {
+          localStorage.setItem('profilePicUrl', updateData.profilePic);
+        }
+
+        messageEl.textContent = 'Profile updated successfully!';
+        messageEl.classList.add('success');
+
+        // Clear password field after successful update
+        document.getElementById('password').value = '';
+
+      } catch (error) {
+        console.error('Update error:', error);
+        messageEl.textContent = 'Error updating profile. Please try again.';
+      }
+    });
+
+    // Helper: convert file to base64 string
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      });
+    }
+  </script>
+
+</body>
+</html>

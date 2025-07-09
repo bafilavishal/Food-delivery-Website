@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rewards | Foodie Express</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #fff9f7, #ffe3e0);
+      color: #333;
+    }
+
+    header {
+      background-color: #ff6f61;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .points-summary {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .points-summary h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    .points-summary p {
+      font-size: 1.1em;
+      color: #666;
+    }
+
+    .rewards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .reward-card {
+      background-color: #fff5f3;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #fbd4cd;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .reward-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .reward-card i {
+      font-size: 2em;
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    .reward-card h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .reward-card p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    .earn-more {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .earn-more h3 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+
+    .earn-more ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1em;
+    }
+
+    .earn-more li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      margin-top: 50px;
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .section-title {
+        font-size: 1.6em;
+      }
+
+      .points-summary h2 {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Foodie Express Rewards</h1>
+    <p>Earn points. Redeem delicious rewards.</p>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Your Reward Summary</h2>
+
+    <div class="points-summary">
+      <h2>🏆 2,450 Points</h2>
+      <p>Keep ordering to unlock exciting rewards!</p>
+    </div>
+
+    <div class="rewards-grid">
+      <div class="reward-card">
+        <i class="fas fa-coffee"></i>
+        <h3>Free Beverage</h3>
+        <p>Redeem for 500 points</p>
+      </div>
+      <div class="reward-card">
+        <i class="fas fa-pizza-slice"></i>
+        <h3>50% Off Pizza</h3>
+        <p>Redeem for 1000 points</p>
+      </div>
+      <div class="reward-card">
+        <i class="fas fa-birthday-cake"></i>
+        <h3>Free Dessert</h3>
+        <p>Redeem for 750 points</p>
+      </div>
+      <div class="reward-card">
+        <i class="fas fa-truck"></i>
+        <h3>Free Delivery</h3>
+        <p>Redeem for 300 points</p>
+      </div>
+    </div>
+
+    <div class="earn-more">
+      <h3>How to Earn More Points</h3>
+      <ul>
+        <li>🍔 Order food: 1 point per ₹1 spent</li>
+        <li>🎉 Refer a friend: 500 points</li>
+        <li>📱 Download the app: 250 points</li>
+        <li>💬 Leave a review: 150 points</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Foodie Express. All rights reserved.
+  </footer>
+
+</body>
+</html>

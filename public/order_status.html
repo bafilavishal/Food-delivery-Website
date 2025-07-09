@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Status</title>
+<link rel="stylesheet" href="css/order_status.css">
+</head>
+<body>
+  <div class="status-wrapper">
+    <h1>Order Status</h1>
+
+    <div class="order-info">
+      <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+      <p><strong>Name:</strong> <span id="orderName"></span></p>
+      <p><strong>Mobile:</strong> <span id="orderMobile"></span></p>
+      <p><strong>Address:</strong> <span id="orderAddress"></span></p>
+      <p><strong>Estimated Delivery:</strong> 30-40 minutes</p>
+    </div>
+
+    <div class="status-tracker">
+      <div class="step active"><span>📥 Received</span></div>
+      <div class="step"><span>👨‍🍳 Preparing</span></div>
+      <div class="step"><span>🛵 Out for Delivery</span></div>
+      <div class="step"><span>✅ Delivered</span></div>
+    </div>
+
+    <div class="progress-bar"><div class="bar-fill"></div></div>
+
+    <h3>Your Items:</h3>
+    <ul id="orderItems"></ul>
+
+    <!-- New Action Buttons -->
+    <div class="action-buttons" style="margin-top: 20px; display: flex; gap: 10px;">
+      <button id="cancelOrderBtn" class="support-btn">❌ Cancel Order</button>
+      <button id="homeBtn" class="support-btn">🏠 Back to Home</button>
+    </div>
+  </div>
+
+<script>
+  // Get order from localStorage
+  const orderData = JSON.parse(localStorage.getItem('latestOrder'));
+  if (!orderData) {
+    document.body.innerHTML = '<h2 style="text-align:center">No order found.</h2>';
+  } else {
+    // Always generate a new random order ID
+    const generatedOrderId = `#${Math.floor(100000 + Math.random() * 900000)}`;
+
+    document.getElementById('orderId').textContent = generatedOrderId;
+    document.getElementById('orderName').textContent = orderData.customer.name;
+    document.getElementById('orderMobile').textContent = orderData.customer.mobile;
+    document.getElementById('orderAddress').textContent = orderData.customer.address + ', ' + orderData.customer.city + ', ' + orderData.customer.state + ', ' + orderData.customer.pincode;
+
+    const orderItems = document.getElementById('orderItems');
+    orderData.items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} x${item.quantity}`;
+      orderItems.appendChild(li);
+    });
+
+    const bar = document.querySelector('.bar-fill');
+    setTimeout(() => { bar.style.width = '50%'; }, 500); // Example: halfway
+
+    // Cancel Order handler
+    document.getElementById('cancelOrderBtn').addEventListener('click', () => {
+      if (confirm('Are you sure you want to cancel your order?')) {
+        localStorage.removeItem('latestOrder');
+        alert('Your order has been cancelled.');
+        window.location.href = 'main_page.html'; // or wherever your home page is
+      }
+    });
+
+    // Back to Home handler
+    document.getElementById('homeBtn').addEventListener('click', () => {
+      window.location.href = 'main_page.html';
+    });
+  }
+</script>
+</body>
+</html>
